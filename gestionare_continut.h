@@ -36,11 +36,11 @@ typedef struct {
 
 extern Postare Postari[MAX_POSTARI];
 extern int ctrPost;
-extern int nextPostId;
+extern int urmPostId;
 
 void incarcaPost(void);
 void salvezPost(void);
-void shell_sort(void *base, size_t nmemb, size_t size,
+void shellSort(void *base, size_t nmemb, size_t size,
 		int (*cmp)(const void*, const void*));
 void adaugPost(const char *continut, int autorIdx);
 void adaugComent(int postIndex, const char *continut, int autorIdx);
@@ -50,3 +50,4 @@ void sortPost(void);
 int postSePotriveste(const Postare *p, const char *termen);
 
 #endif
+
