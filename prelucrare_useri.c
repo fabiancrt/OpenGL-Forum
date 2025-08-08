@@ -53,10 +53,10 @@ int curataSpatiu(char *str) {
 void copiazaFisier(const char *fisierSursa, const char *fisierDestinatie) {
 	FILE *sursa, *destinatie;
 	int ch;
-	sursa = fopen(fisierSursa, "r");
+	sursa = fopen(fisierSursa, "rb");
 	if (sursa == NULL)
 		return;
-	destinatie = fopen(fisierDestinatie, "w");
+	destinatie = fopen(fisierDestinatie, "wb");
 	if (destinatie == NULL) {
 		fclose(sursa);
 		return;
@@ -96,7 +96,7 @@ void procUseri() {
 				ctrUsers, f);
 		if (nrUtilizatoriCititi != (size_t) ctrUsers) {
 			printf(
-					"Numarul de useri cititi (%u) difera de cel cunoscut (%d).\n",
+					"Numarul de useri cititi (%zu) difera de cel cunoscut (%d).\n",
 					nrUtilizatoriCititi, ctrUsers);
 			ctrUsers = (int) nrUtilizatoriCititi;
 			if (ctrUsers < 0)
@@ -160,3 +160,4 @@ int verificaLogarea(char *nume, char *parola) {
 	}
 	return -1;
 }
+
